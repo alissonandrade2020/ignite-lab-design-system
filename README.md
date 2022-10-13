@@ -1,7 +1,7 @@
 
 # Ignite Lab 3 - Design System
 
-![Ignite Lab - Design System](./preview.png)
+![Ignite Lab - Design System](https://github.com/alissonandrade2020/ignite-lab-design-system/raw/6a5baeed370a70cbe348003dec172c07fd7043da/preview.png)
 
 > Projeto desenvolvido no **Ignite Lab 3** da Rocketseat. A aplicação foi desenvolvida por completa, desde o projeto dentro do Figma, criando todo o Design System até a construção em React.JS e finalizando com a documentação dos componentes utilizando o Storybook.
 
