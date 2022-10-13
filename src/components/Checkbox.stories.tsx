@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Checkbox, ICheckboxProps } from './Checkbox'
+import { Checkbox, CheckboxProps } from './Checkbox'
 import { Text } from './Text'
-
 
 export default {
   title: 'Components/Checkbox',
@@ -11,15 +10,13 @@ export default {
   decorators: [
     (Story) => {
       return (
-        <div className='flex items-center gap-2'>
+        <div className="flex items-center gap-2">
           {Story()}
-          <Text>Lembrar de mim por 30 dias</Text>
+          <Text size="sm">Lembrar-me de mim por 30 dias</Text>
         </div>
       )
     }
-  ]
-} as Meta<ICheckboxProps>
+  ],
+} as Meta<CheckboxProps>
 
-// Precisa exportar uma variante do componente
-export const Default: StoryObj<ICheckboxProps> = {}
-
+export const Default: StoryObj<CheckboxProps> = {}

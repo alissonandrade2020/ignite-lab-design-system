@@ -1,17 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Button, IButtonProps } from './Button';
-
+import { Button, ButtonProps } from './Button'
 
 export default {
   title: 'Components/Button',
   component: Button,
   args: {
-    children: 'Button',
+    children: 'Create account',
   },
-  argTypes: {
-  }
-} as Meta<IButtonProps>
+  argTypes: {}
+} as Meta<ButtonProps>
 
-// Precisa exportar uma variante do componente
-export const Default: StoryObj<IButtonProps> = {}
-
+export const Default: StoryObj<ButtonProps> = {}
