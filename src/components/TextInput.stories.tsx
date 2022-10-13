@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
+import { TextInput, ITextInputRootProps } from './TextInput'
 import { Envelope } from 'phosphor-react'
-import { TextInput, TextInputRootProps } from './TextInput'
 
 export default {
   title: 'Components/TextInput',
@@ -10,22 +10,24 @@ export default {
       <TextInput.Icon>
         <Envelope />
       </TextInput.Icon>,
-      <TextInput.Input placeholder="Type your e-mail address" />
-    ],
+      <TextInput.Input placeholder='Type your email address'/>
+    ]
   },
   argTypes: {
     children: {
       table: {
-        disable: true,
+        disable: true
       }
-    },
+    }
   }
-} as Meta<TextInputRootProps>
+} as Meta<ITextInputRootProps>
 
-export const Default: StoryObj<TextInputRootProps> = {}
+// Precisa exportar uma variante do componente
+export const Default: StoryObj<ITextInputRootProps> = {}
 
-export const WithoutIcon: StoryObj<TextInputRootProps> = {
+export const WithoutIcon: StoryObj<ITextInputRootProps> = {
   args: {
-    children: <TextInput.Input placeholder="Type your e-mail address" />
+    children: <TextInput.Input placeholder='Type your email address'/>
   }
 }
+

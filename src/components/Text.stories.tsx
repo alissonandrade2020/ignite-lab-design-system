@@ -1,12 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Text, TextProps } from './Text'
+
+import { Text, ITextProps } from "./Text";
 
 export default {
   title: 'Components/Text',
   component: Text,
   args: {
-    children: 'Lorem ipsum.',
-    size: 'md',
+    children: 'Lorem ipsum',
+    size: 'md'
   },
   argTypes: {
     size: {
@@ -16,38 +17,40 @@ export default {
       }
     }
   }
-} as Meta<TextProps>
+} as Meta<ITextProps>
 
-export const Default: StoryObj<TextProps> = {}
+// Precisa exportar uma variante do componente
+export const Default: StoryObj<ITextProps> = {}
 
-export const Small: StoryObj<TextProps> = {
+export const Small: StoryObj<ITextProps> = {
   args: {
     size: 'sm'
   }
 }
 
-export const Large: StoryObj<TextProps> = {
+export const Large: StoryObj<ITextProps> = {
   args: {
     size: 'lg'
   }
 }
 
-export const CustomComponent: StoryObj<TextProps> = {
+export const CustomCompoment: StoryObj<ITextProps> = {
   args: {
     asChild: true,
     children: (
-      <p>Text with P tag</p>
+      <p>Text with Paragraph</p>
     )
   },
+  // Remove o control do preview do storyBook
   argTypes: {
     children: {
       table: {
-        disable: true,
+        disable: true
       }
     },
     asChild: {
       table: {
-        disable: true,
+        disable: true
       }
     }
   }

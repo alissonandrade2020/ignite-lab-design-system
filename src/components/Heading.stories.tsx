@@ -1,12 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Heading, HeadingProps } from './Heading'
+
+import { Heading, IHeadingProps } from './Heading';
 
 export default {
   title: 'Components/Heading',
   component: Heading,
   args: {
-    children: 'Lorem ipsum.',
-    size: 'md',
+    children: 'Lorem ipsum',
+    size: 'md'
   },
   argTypes: {
     size: {
@@ -16,38 +17,40 @@ export default {
       }
     }
   }
-} as Meta<HeadingProps>
+} as Meta<IHeadingProps>
 
-export const Default: StoryObj<HeadingProps> = {}
+// Precisa exportar uma variante do componente
+export const Default: StoryObj<IHeadingProps> = {}
 
-export const Small: StoryObj<HeadingProps> = {
+export const Small: StoryObj<IHeadingProps> = {
   args: {
     size: 'sm'
   }
 }
 
-export const Large: StoryObj<HeadingProps> = {
+export const Large: StoryObj<IHeadingProps> = {
   args: {
     size: 'lg'
   }
 }
 
-export const CustomComponent: StoryObj<HeadingProps> = {
+export const CustomCompoment: StoryObj<IHeadingProps> = {
   args: {
     asChild: true,
     children: (
       <h1>Heading with H1</h1>
     )
   },
+  // Remove o control do preview do storyBook
   argTypes: {
     children: {
       table: {
-        disable: true,
+        disable: true
       }
     },
     asChild: {
       table: {
-        disable: true,
+        disable: true
       }
     }
   }

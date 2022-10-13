@@ -1,27 +1,28 @@
-import { InputHTMLAttributes, ReactNode } from 'react';
 import { Slot } from '@radix-ui/react-slot';
+import { clsx } from 'clsx';
+import { InputHTMLAttributes, ReactNode } from 'react';
 
-export interface TextInputRootProps {
+export interface ITextInputRootProps {
   children: ReactNode;
 }
 
-function TextInputRoot(props: TextInputRootProps) {
+function TextInputRoot(props: ITextInputRootProps) {
   return (
-    <div className="flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 w-full focus-within:ring-2 ring-cyan-300">
-      {props.children}
+    <div className='flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 focus-within:ring-2 ring-cyan-300'>      
+      { props.children }
     </div>
   )
 }
 
 TextInputRoot.displayName = 'TextInput.Root'
 
-export interface TextInputIconProps {
+export interface ITextInputIconProps {
   children: ReactNode;
 }
 
-function TextInputIcon(props: TextInputIconProps) {
+function TextInputIcon(props: ITextInputIconProps) {
   return (
-    <Slot className="w-6 h-6 text-gray-400">
+    <Slot className='w-6 h-6 text-gray-400'>
       {props.children}
     </Slot>
   )
@@ -29,12 +30,13 @@ function TextInputIcon(props: TextInputIconProps) {
 
 TextInputIcon.displayName = 'TextInput.Icon'
 
-export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface ITextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-function TextInputInput(props: TextInputInputProps) {
+function TextInputInput(props: ITextInputInputProps) {
+
   return (
-    <input 
-      className="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none"
+    <input
+      className='bg-transparent flex-1 outline-none text-gray-100 text-xs placeholder:text-gray-400'
       {...props}
     />
   )
@@ -42,8 +44,9 @@ function TextInputInput(props: TextInputInputProps) {
 
 TextInputInput.displayName = 'TextInput.Input'
 
+
 export const TextInput = {
   Root: TextInputRoot,
   Input: TextInputInput,
-  Icon: TextInputIcon,
+  Icon: TextInputIcon
 }
